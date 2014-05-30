@@ -1,0 +1,4 @@
+# No idea whether this works in here
+
+User-agent: *
+Disallow: /styles/
