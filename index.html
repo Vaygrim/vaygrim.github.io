@@ -19,6 +19,18 @@
                 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
                 document.write("<a class=\"twitter-timeline\" align=\"center\" height=\"350\" data-dnt=\"true\" href=\"https://twitter.com/search?q=%23livestream+from%3AVaygrim\" data-widget-id=\"463738422134177793\">Vaygrim's Livestream tweets</a>");
             }
+                var isBlack = false;
+                function switchColor(){
+                    if (isBlack) {
+                    document.all.main.style.backgroundColor="#FEFEFE";
+                    document.body.style.backgroundColor="#f6f6f6";
+                    isBlack = false;
+                    } else {
+                    document.all.main.style.backgroundColor="#202020";
+                    document.body.style.backgroundColor="#101010";
+                    isBlack = true;
+                    }
+                }
         </script>
         <div class="stream-chat">
             <iframe name="kiwiIRC" scrolling="no" src="https://kiwiirc.com/client/irc.esper.net/?nick=Guest|?&theme=relaxed#Vaygrim"></iframe>
@@ -26,7 +38,7 @@
     </div>
         <div class="stream-footer">
             <p>If something doesn't show correctly, make sure you have cookies enabled!</p>
-            <a class="button" href="http://vaygrim.com" target="_blank">Home</a><a class="button" href="credits.html" target="_blank">Credits</a><BR>
+            <a class="button" href="http://vaygrim.com" target="_blank">Home</a><a class="button" href="credits.html" target="_blank">Credits</a><button type="button" class="button-right" onclick="switchColor()">Switch background</button>
         </div>
     </div>
     <!--Nope><iframe src="http://webchat.esper.net/?nick=StreamUser....&channels=Vaygrim&fg_color=000000&fg_sec_color=000000&bg_color=ffffff&prompt=1" width="350" height="500"></iframe><!-->
