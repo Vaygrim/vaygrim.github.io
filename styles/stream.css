@@ -107,15 +107,6 @@ a:focus {
     color: #101010;
 }
 
-.button:hover,
-.button:active,
-.button:focus {
-    outline: none;
-    box-shadow: 0 0 0 rgba(0,0,0,0.1);
-    border-color: #888888;
-    background-color: #f2f2f2;
-}
-
 .button-right {
     display: inline-block;
     border-radius: 5px;
@@ -129,9 +120,28 @@ a:focus {
     color: #101010;
 }
 
+.button-left {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #cecece;
+    background: linear-gradient(to bottom, rgba(248,248,248,1) 0%,rgba(237,237,237,1) 100%);
+    padding: 6px 12px;
+    margin: 0.5em 5px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    float: left;
+    text-decoration: none;
+    color: #101010;
+}
+
+.button:hover,
+.button:active,
+.button:focus,
 .button-right:hover,
 .button-right:active,
-.button-right:focus {
+.button-right:focus,
+.button-left:hover,
+.button-left:active,
+.button-left:focus {
     outline: none;
     box-shadow: 0 0 0 rgba(0,0,0,0.1);
     border-color: #888888;
@@ -160,7 +170,13 @@ a:focus {
         padding-left: 10px;
         padding-right: 10px;
     }
-    
+
+    .stream object {
+        float:center;
+        height:378px;
+        width:620px;
+    }
+
     .stream iframe {
         float:left;
         width: 853px;
