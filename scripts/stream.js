@@ -37,6 +37,6 @@ function switchVideo(){
         isTwitch = true;
     } else {
         replaceTargetWith("live_embed_player_flash","<iframe id = \"youtube\" name=\"YouTube\" src=http://www.youtube.com/embed/" + vid + "?rel=0 frameborder=\"0\" allowfullscreen></iframe>");
-    isTwitch = false;
+        isTwitch = false;
     }
 }
