@@ -164,7 +164,7 @@ a:focus {
     clear: both;
 }
 
-@media (max-width: 1600px) {
+@media {
     #main {
         float:center;
         padding-left: 10px;
@@ -172,9 +172,9 @@ a:focus {
     }
 
     .stream object {
-        float:center;
-        height:378px;
-        width:620px;
+        float:left;
+        width:726px;
+        height:424px;
     }
 
     .stream iframe {
