@@ -23,7 +23,7 @@ function switchColor(){
 }
 
 function setVideoAccordingly(){
-	videoDiv=document.getElementById("video");
+	videoDiv=document.getElementById("content");
 	if(isTwitch){
 		videoDiv.innerHTML = getTwitchHTML();
 	} else {
@@ -39,11 +39,9 @@ function switchVideo(){
 function initPage(){
 	if (url.indexOf("?v=") != -1){
 		vid = url.split("v=")[1].split("&")[0];
+		document.getElementById("twitterfeed").innerHTML = "";
 		setVideoAccordingly();
-	} else {
-		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-		document.write("<a class=\"twitter-timeline\" align=\"center\" height=\"350\" data-dnt=\"true\" href=\"https://twitter.com/search?q=%23livestream+from%3AVaygrim\" data-widget-id=\"463738422134177793\">Vaygrim's Livestream tweets</a>");
-	}
+	} 
 }
 
 window.onload = initPage;
