@@ -1,12 +1,20 @@
 var url=document.URL;
+
+function getYoutubeHTML(){
+	return "<iframe id=\"youtube\" name=\"YouTube\" src=http://www.youtube.com/embed/" + vid + "?rel=0 frameborder=\"0\" allowfullscreen></iframe>";
+}
+function getTwitchHTML(){
+	return "<object type=\"application/x-shockwave-flash\" id=\"live_embed_player_flash\" data=\"http://www.twitch.tv/widgets/live_embed_player.swf?channel=vaygrim\" bgcolor=\"#000000\"><param name=\"allowFullScreen\" value=\"true\" /><param name=\"allowScriptAccess\" value=\"always\" /><param name=\"allowNetworking\" value=\"all\" /><param name=\"movie\" value=\"http://www.twitch.tv/widgets/live_embed_player.swf\" /><param name=\"flashvars\" value=\"hostname=www.twitch.tv&channel=vaygrim&auto_play=true&start_volume=25\" /></object>";
+}
 if (url.indexOf("?v=") != -1){
     var vid = url.split("v=")[1].split("&")[0];
-    document.write("<iframe id=\"youtube\" name=\"YouTube\" src=http://www.youtube.com/embed/" + vid + "?rel=0 frameborder=\"0\" allowfullscreen></iframe>");
+    document.write(getYoutubeHTML());
 } else {
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     document.write("<a class=\"twitter-timeline\" align=\"center\" height=\"350\" data-dnt=\"true\" href=\"https://twitter.com/search?q=%23livestream+from%3AVaygrim\" data-widget-id=\"463738422134177793\">Vaygrim's Livestream tweets</a>");
 }
 var isBlack = false;
+
 function switchColor(){
     if (isBlack) {
         document.all.main.style.backgroundColor="#FEFEFE";
@@ -33,10 +41,10 @@ function replaceTargetWith( targetID, html ){
 var isTwitch = false;
 function switchVideo(){
     if (!isTwitch) {
-        replaceTargetWith("youtube","<object type=\"application/x-shockwave-flash\" id=\"live_embed_player_flash\" data=\"http://www.twitch.tv/widgets/live_embed_player.swf?channel=vaygrim\" bgcolor=\"#000000\"><param name=\"allowFullScreen\" value=\"true\" /><param name=\"allowScriptAccess\" value=\"always\" /><param name=\"allowNetworking\" value=\"all\" /><param name=\"movie\" value=\"http://www.twitch.tv/widgets/live_embed_player.swf\" /><param name=\"flashvars\" value=\"hostname=www.twitch.tv&channel=vaygrim&auto_play=true&start_volume=25\" /></object>");
+        replaceTargetWith("youtube",getTwitchHTML());
         isTwitch = true;
     } else {
-        replaceTargetWith("live_embed_player_flash","<iframe id = \"youtube\" name=\"YouTube\" src=http://www.youtube.com/embed/" + vid + "?rel=0 frameborder=\"0\" allowfullscreen></iframe>");
+        replaceTargetWith("live_embed_player_flash",getYoutubeHTML());
     isTwitch = false;
     }
 }
