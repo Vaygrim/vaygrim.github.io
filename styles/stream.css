@@ -68,23 +68,18 @@ a:focus {
     margin: 0.5em 0;
 }
 
-.stream iframe {
-    width: 920px;
-    height: 480px;
-}
 
 .stream-chat {
     float: right;
-    height:81%;
+	min-width:322px;
+	width:25%;
 }
 
 .stream-chat iframe {
-    position:relative;
-    float: right;
-    width: 380px;
-    height: 85%;
-    min-height:480px;
-    max-width: 380px;
+    min-width: 320px;
+	width:100%;
+    height: inherit;
+    min-height:300px;
     border:1;
 }
 
@@ -163,38 +158,48 @@ a:focus {
 .clear {
     clear: both;
 }
-
-@media {
+.stream #content {
+	float:left;
+	width:70%;
+	min-width:144px;
+}
+#content object{
+	width:100%;
+	height: inherit;
+}
+#content iframe{
+	width:100%;
+	height: inherit;
+}
+.stream  > div {
+	height: 81%;
+}
+@media {/*
     #main {
         float:center;
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .stream object {
-        float:left;
-        width:726px;
-        height:424px;
-    }
+    
 
     .stream iframe {
         float:left;
         width: 853px;
         height:480px;
     }
-    
+   
     .stream-chat {
         float: right;
         width: 380px;
         max-width: 380px;
         height: 81%;
         min-height:480px;
-    }
+    }*/ 
 }
 
-@media (max-width: 920px) {
-    #main {
-        padding-left: 2%;
-        padding-right: 2%;
-    }
+@media (max-width: 1200px) {
+    .stream #content{
+		width:65%;
+		}
 }
