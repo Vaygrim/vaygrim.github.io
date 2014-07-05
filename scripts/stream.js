@@ -38,10 +38,19 @@ function switchVideo(){
 
 function initPage(){
 	if (url.indexOf("?v=") != -1){
+		
+		var twitterfeed = document.getElementById("twitterfeed");
+		twitterfeed.parentNode.removeChild(twitterfeed);
+		
 		vid = url.split("v=")[1].split("&")[0];
-		document.getElementById("twitterfeed").innerHTML = "";
 		setVideoAccordingly();
 	} 
+	else
+	{
+		var content = document.getElementById("content");
+		content.parentNode.removeChild(content);
+		
+	}
 }
 
 window.onload = initPage;
