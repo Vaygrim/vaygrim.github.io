@@ -2,10 +2,13 @@ html {
     font-family: 'Open Sans';
     font-weight: normal;
     font-size: 14px;
+	height: 100%;
 }
 
 body {
     background-color: #f6f6f6;
+	height: 100%;
+    overflow: hidden;
 }
 
 html, body, h1, h2, h3, h4, p {
@@ -54,6 +57,7 @@ a:focus {
     padding: 20px;
     margin: 20px auto;
     box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    height: 100%;
 }
 
 #main h1,
@@ -68,23 +72,17 @@ a:focus {
     margin: 0.5em 0;
 }
 
-.stream iframe {
-    width: 920px;
-    height: 480px;
-}
-
 .stream-chat {
     float: right;
-    height:81%;
+	min-width:322px;
+	width:25%;
 }
 
 .stream-chat iframe {
-    position:relative;
-    float: right;
-    width: 380px;
-    height: 85%;
-    min-height:480px;
-    max-width: 380px;
+    min-width: 320px;
+	width:100%;
+    height: inherit;
+    min-height:300px;
     border:1;
 }
 
@@ -163,56 +161,82 @@ a:focus {
 .clear {
     clear: both;
 }
+.stream #content {
+	float:left;
+	width:70%;
+	min-width:144px;
+}
+.stream #twitterfeed {
+	float:left;
+	width:70%;
+	min-width:144px;
+}
+#content object{
+	width:100%;
+	height: inherit;
+}
+#content iframe{
+	width:100%;
+	height: inherit;
+}
+.stream{
+	height: 81%;
+}
 
-@media {
+#twitterfeed > iframe {
+	height: 100%;
+}
+
+
+div.stream > div {
+	height: 100%;
+}
+
+@media {/*
     #main {
         float:center;
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .stream object {
-        float:left;
-        width:726px;
-        height:424px;
-    }
+    
 
     .stream iframe {
         float:left;
         width: 853px;
-        height: 480px;
+        height:480px;
     }
-
+   
     .stream-chat {
         float: right;
         width: 380px;
         max-width: 380px;
         height: 81%;
         min-height:480px;
-    }
+    }*/ 
 }
 
-.video-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-    height: 0;
-	overflow: hidden;
+@media (max-width: 1200px)
+	and (min-width:1000px){
+    .stream #content{
+		width:65%;
+		}
+	.stream #twitterfeed{
+		width:65%;
+		}
 }
 
-.video-container iframe,  
-.video-container object,  
-.video-container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-    width: 65%;
-	height: 65%;
-}
-
-@media (max-width: 920px) {
-    #main {
-        padding-left: 2%;
-        padding-right: 2%;
-    }
+@media (max-width: 1000px) {
+    .stream > div{
+		width:80%;
+		margin:2px 10%;
+		}
+	.stream #content {
+		width:80%;
+		max-height: 440px;
+	}
+	.stream #twitterfeed {
+		width:80%;
+		max-height: 440px;
+	}
 }
